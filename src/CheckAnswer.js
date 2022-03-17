@@ -1,6 +1,9 @@
 import {useEffect, useState} from 'react';
 import QuestionSection from './QuestionSection';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
+
 
 
 function CheckAnswer(props) {
@@ -28,9 +31,6 @@ function CheckAnswer(props) {
 
     }
 
-    // const handleIndexIncrease = function () {
-    //     props.incrementIndex();
-    // }
     
     async function answerCheck() {
         props.jAnswer == userValue ?
@@ -42,18 +42,17 @@ function CheckAnswer(props) {
         console.log(props.jAnswer, userValue, userScore, props.jScore)    
     }
 
-
-        
-    
-
     return (
         <div className="formContainer">
             <form onSubmit={(e) => { handleUserAnswer(e); answerCheck() }}>
                 <label htmlFor="answer"></label>
-                <input className="inputField" type="text" name="answer" id="answer"
-                    onInput={handleInput}
-                />
-                <button className="inputButton">Submit Answer</button>
+                <div className="inputIn">
+                    <input className="inputField" type="text" name="answer" id="answer"
+                        onInput={handleInput}
+                        placeholder="What Is..."
+                    />
+                    <button className="inputButton"><FontAwesomeIcon icon={faArrowRightToBracket} className="iconEnter" /></button>
+                </div>
             </form>
         </div>
     )

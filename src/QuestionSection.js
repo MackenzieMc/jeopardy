@@ -8,8 +8,6 @@ import GameOver from './GameOver';
 
 import NextButton from './NextButton';
 
-
-
 function QuestionSection (props) {
 
     const [userInput, setUserInput] = useState('');
@@ -50,16 +48,19 @@ function QuestionSection (props) {
                         jCategory = {question.category.title}
                         jScore = {question.value}
                         />
-                        <CheckAnswer 
-                        jQuestion = {question.question}
-                        jScore={question.value}
-                        jAnswer = {question.answer.toLowerCase()}
-                        handleSubmit = { usersAnswer }
-                        trackScore = { trackUserScore }
-                        />
-                        <NextButton 
-                        incrementIndex = { incrementCounter }
-                        />
+                        <div className="inputFlexContainer">
+                            <CheckAnswer 
+                            jQuestion = {question.question}
+                            jScore={question.value}
+                            jAnswer = {question.answer.toLowerCase()}
+                            handleSubmit = { usersAnswer }
+                            trackScore = { trackUserScore }
+                            key={question.category.id}
+                            />
+                            <NextButton 
+                            incrementIndex = { incrementCounter }
+                            />
+                        </div>
                         </>   
 
                         : null

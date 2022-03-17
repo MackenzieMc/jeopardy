@@ -8,6 +8,8 @@ import { useState, useEffect } from 'react';
 //Import QuestionSection component
 import QuestionSection from './QuestionSection';
 
+import Footer from './Footer';
+
 
 
 
@@ -22,7 +24,7 @@ function App(props) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   //Track the answer that the user provides in the text field
-  const [userInput, setUserInput] = useState('');
+  // const [userInput, setUserInput] = useState('');
 
   
 
@@ -40,11 +42,11 @@ function App(props) {
     })
   }, [])
 
-  const usersAnswer = function(e, usersAnswer) {
-    e.preventDefault();
+  // const usersAnswer = function(e, usersAnswer) {
+  //   e.preventDefault();
 
-    setUserInput(userInput)
-  }
+  //   setUserInput(userInput)
+  // }
 
   const incrementCounter = () => {
     setCurrentQuestionIndex(currentQuestionIndex + 1)
@@ -52,10 +54,15 @@ function App(props) {
 
 
   return (
+    <>
     <div className="App">
       <h1>Jeopardy</h1>
       <QuestionSection theQuestion={questionArray} questionIndex={currentQuestionIndex} incrementIndex={incrementCounter} />
     </div>
+    <div>
+      <Footer />
+    </div>
+  </>
   );
 }
 
