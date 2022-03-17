@@ -1,4 +1,4 @@
-import QuestionSection from "./QuestionSection";
+
 
 function GameOver(props) {
     return (

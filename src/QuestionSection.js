@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import IndividualQuestion from "./individualQuestion";
 
@@ -38,7 +38,7 @@ function QuestionSection (props) {
                 props.theQuestion.map( (question, index) => {
                     
                     return (
-                        index == currentQuestionIndex ?
+                        index === currentQuestionIndex ?
                         
                         <>
                         <IndividualQuestion 

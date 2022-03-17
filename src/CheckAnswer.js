@@ -1,5 +1,4 @@
-import {useEffect, useState} from 'react';
-import QuestionSection from './QuestionSection';
+import { useState} from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +7,6 @@ import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
 function CheckAnswer(props) {
 
-    const [userScore, setUserScore] = useState(0);
 
     const [userValue, setUserValue] = useState('');
 
@@ -36,10 +34,8 @@ function CheckAnswer(props) {
         props.jAnswer == userValue ?
         
         scoreKeeper(props.jScore)
-        : console.log('Incorrect');
+        : console.log();
         
-        console.log(userScore);
-        console.log(props.jAnswer, userValue, userScore, props.jScore)    
     }
 
     return (
