@@ -2,6 +2,7 @@
 
 html {
   font-size: 125%;
+  height: 100vh;
 }
 
 body {
@@ -12,7 +13,8 @@ body {
 h1 {
   font-size: 3rem;
   color: #fff;
-  margin-top: 20px; 
+  margin-top: 20px;
+  font-family: 'IBM Plex Serif', serif;
 
 }
 
@@ -21,7 +23,8 @@ a {
   color: white; 
 }
 
-a:hover {
+a:hover,
+a:focus {
   color: #060CE9;
 }
 
@@ -29,9 +32,6 @@ a:hover {
   text-align: center;
 }
 
-.gameOver {
-  height: 75vh; 
-}
 
 .questionContainer {
   font-size: 1.3rem;

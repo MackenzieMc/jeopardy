@@ -7,7 +7,6 @@ function IndividualQuestion(props) {
             </div>
             <div className="questionText">
                 <h3>{props.jQuestion}.</h3>
-                <h3>{props.jAnswer}</h3>
             </div>
             <div className="scoreInt">
                 <h3>{props.jScore}</h3>
