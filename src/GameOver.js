@@ -1,4 +1,4 @@
-
+import IndividualQuestion from "./individualQuestion";
 
 function GameOver(props) {
     return (
@@ -6,7 +6,9 @@ function GameOver(props) {
             <div className="questionCard">
                 <h2>Game Over!</h2>
                 <h3>Your Score: {props.displayScore}</h3>
+                <h4>{props.displayQuestion}</h4>
             </div>
+            
         </div>
     )
 }

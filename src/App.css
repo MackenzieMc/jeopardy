@@ -119,7 +119,8 @@ form {
 
 .iconNext {
   margin-left: 10px; 
-  color: #060CE9
+  color: #060CE9;
+  font-size: 0.9rem;
 }
 
 /* Footer Styling */

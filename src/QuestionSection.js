@@ -68,12 +68,10 @@ function QuestionSection (props) {
                 })
                 : <GameOver 
                 displayScore = { userScore }
+                
                 />
             }
 
-            {
-
-            }
             </div>  
         </section>
     )
