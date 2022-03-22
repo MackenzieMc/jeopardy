@@ -10,12 +10,11 @@ function CheckAnswer(props) {
 
     const [userValue, setUserValue] = useState('');
 
+    const [showAnswer, setShowAnswer] = useState(false)
+
     const scoreKeeper = function(usersResponse) {
         props.trackScore(usersResponse)
     }
-
-
-
 
     //track 2 events within this component, the user submitted answer and the form submit
 
@@ -37,6 +36,8 @@ function CheckAnswer(props) {
         : console.log();
         
     }
+
+    console.log(props.jAnswer);
 
     return (
         <div className="formContainer">

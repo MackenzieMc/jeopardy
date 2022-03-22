@@ -14,7 +14,7 @@ import Footer from './Footer';
 
 
 
-function App(props) {
+function App() {
 
   //Call useState to track which data is returned from the API
   //The API returns an array of objects
@@ -23,10 +23,7 @@ function App(props) {
   
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
-  //Track the answer that the user provides in the text field
-  // const [userInput, setUserInput] = useState('');
-
-  
+  const [soundPlayer, setSoundPlayer ] = useState(false)
 
   useEffect( () => {
     //Test out the API
@@ -42,11 +39,6 @@ function App(props) {
     })
   }, [])
 
-  // const usersAnswer = function(e, usersAnswer) {
-  //   e.preventDefault();
-
-  //   setUserInput(userInput)
-  // }
 
   const incrementCounter = () => {
     setCurrentQuestionIndex(currentQuestionIndex + 1)
@@ -56,6 +48,7 @@ function App(props) {
   return (
     <>
     <div className="App">
+      {/* <SoundPlayer /> */}
       <h1>Jeopardy</h1>
       <QuestionSection theQuestion={questionArray} questionIndex={currentQuestionIndex} incrementIndex={incrementCounter} />
     </div>
