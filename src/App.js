@@ -6,9 +6,12 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 //Import QuestionSection component
-import QuestionSection from './QuestionSection';
+import QuestionSection from './components/QuestionSection';
 
-import Footer from './Footer';
+import Footer from './components/Footer';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 
 
@@ -49,11 +52,11 @@ function App() {
     <>
     <div className="App">
       {/* <SoundPlayer /> */}
-      <h1>Jeopardy</h1>
-      <QuestionSection theQuestion={questionArray} questionIndex={currentQuestionIndex} incrementIndex={incrementCounter} />
-    </div>
-    <div>
-      <Footer />
+      <div class="wrapper">
+        <h1>Jeopardy</h1>
+        <QuestionSection theQuestion={questionArray} questionIndex={currentQuestionIndex} incrementIndex={incrementCounter} />
+        <Footer />
+      </div>
     </div>
   </>
   );

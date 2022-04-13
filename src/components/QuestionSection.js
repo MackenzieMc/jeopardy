@@ -16,10 +16,12 @@ function QuestionSection (props) {
 
     const [userScore, setUserScore] = useState(0);
 
-    const usersAnswer = function (e, usersAnswer) {
+    const [trackDisable, setDisable] = useState(false)
+
+    const usersAnswer = function (e, userAnswer) {
         e.preventDefault();
 
-        setUserInput(userInput.toLowerCase())
+        setUserInput(userAnswer.toLowerCase())
     }
 
     const incrementCounter = () => {
@@ -29,6 +31,12 @@ function QuestionSection (props) {
     const trackUserScore = (usersResponse) => {
         setUserScore(userScore + usersResponse)
     }
+
+    const trackUserDisable = function(isDisabled) {
+        setDisable(isDisabled)
+    }
+
+    console.log(userInput);
 
     return(
         <section>
@@ -47,15 +55,19 @@ function QuestionSection (props) {
                         jAnswer = {question.answer}
                         jCategory = {question.category.title}
                         jScore = {question.value}
+                        inputDisable={trackDisable}
+                        jUserAnswer = {userInput}
+
                         />
                         <div className="inputFlexContainer">
                             <CheckAnswer 
                             jQuestion = {question.question}
                             jScore={question.value}
-                            jAnswer = {question.answer.toLowerCase()}
+                            jAnswer = {question.answer}
                             handleSubmit = { usersAnswer }
                             trackScore = { trackUserScore }
-                            key={question.category.id}
+                            key= {question.category.id}
+                            trackDisable = { trackUserDisable }
                             />
                             <NextButton 
                             incrementIndex = { incrementCounter }
