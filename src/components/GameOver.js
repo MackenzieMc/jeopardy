@@ -7,8 +7,7 @@ function GameOver(props) {
                 <h2>Game Over!</h2>
                 <h3>Your Score: {props.displayScore}</h3>
                 <h4>{props.displayQuestion}</h4>
-            </div>
-            
+            </div>          
         </div>
     )
 }
