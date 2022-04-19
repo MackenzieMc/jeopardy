@@ -1,5 +1,5 @@
 //Import useState 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import mp3_file from './JeopardyTheme.mp3'
 
@@ -8,8 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeXmark, faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
 
 function SoundPlayer() {
-
-    let themeSong = new Audio 
 
     const [soundOn, setSoundOn] = useState(false)
 
@@ -23,10 +21,10 @@ function SoundPlayer() {
                 {soundOn == false ? 
                     <FontAwesomeIcon icon={faVolumeXmark} />
                     :
-                    <>
+                    <React.Fragment>
                         <FontAwesomeIcon icon={faVolumeHigh} />
                         <audio src={mp3_file} autoPlay></audio>
-                    </>
+                    </React.Fragment>
                 }
             </button>
         </div>

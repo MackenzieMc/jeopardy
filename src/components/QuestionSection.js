@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import IndividualQuestion from "./individualQuestion";
 
@@ -14,7 +14,7 @@ function QuestionSection (props) {
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
-    const [userScore, setUserScore] = useState(0);
+    const [userScore, setUserScore] = useState(100);
 
     const [trackDisable, setDisable] = useState(false)
 
@@ -36,8 +36,6 @@ function QuestionSection (props) {
         setDisable(isDisabled)
     }
 
-    console.log(userInput);
-
     return(
         <section>
             <div className="questionContainer">
@@ -48,7 +46,7 @@ function QuestionSection (props) {
                     return (
                         index === currentQuestionIndex ?
                         
-                        <>
+                        <React.Fragment key={index} >
                         <IndividualQuestion 
                         key = {question.category.id}
                         jQuestion = {question.question}
@@ -57,7 +55,6 @@ function QuestionSection (props) {
                         jScore = {question.value}
                         inputDisable={trackDisable}
                         jUserAnswer = {userInput}
-
                         />
                         <div className="inputFlexContainer">
                             <CheckAnswer 
@@ -66,21 +63,21 @@ function QuestionSection (props) {
                             jAnswer = {question.answer.toLowerCase()}
                             handleSubmit = { usersAnswer }
                             trackScore = { trackUserScore }
-                            key= {question.category.id}
                             trackDisable = { trackUserDisable }
+                            key={userScore}
                             />
                             <NextButton 
                             incrementIndex = { incrementCounter }
+                            key={currentQuestionIndex}
                             />
                         </div>
-                        </>   
+                        </React.Fragment>   
 
                         : null
                     )
                 })
                 : <GameOver 
                 displayScore = { userScore }
-                
                 />
             }
 
