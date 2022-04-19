@@ -49,10 +49,10 @@ function App() {
   return (
     <>
     <div className="App">
-      <div class="wrapper">
+      <div className="wrapper">
         <SoundPlayer />
         <h1>Jeopardy</h1>
-        <QuestionSection theQuestion={questionArray} questionIndex={currentQuestionIndex} incrementIndex={incrementCounter} />
+        <QuestionSection theQuestion={questionArray} questionIndex={currentQuestionIndex} incrementIndex={incrementCounter}/>
         <Footer />
       </div>
     </div>

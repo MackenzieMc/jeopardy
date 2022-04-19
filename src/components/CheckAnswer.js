@@ -22,12 +22,10 @@ function CheckAnswer(props) {
 
     const handleInput = function (e) {
         setUserValue(e.target.value);
-        console.log(userValue);
     }
 
     const handleUserAnswer = function (e) {
         props.handleSubmit(e, userValue);
-        console.log(userValue);
         setInputDisable(true)
     };
 
@@ -43,9 +41,7 @@ function CheckAnswer(props) {
         : console.log('');
         
     }
-
-    console.log(props.jAnswer);
-
+    
     return (
         <div className="formContainer">
             <form onSubmit={(e) => { handleUserAnswer(e); answerCheck()}}>
