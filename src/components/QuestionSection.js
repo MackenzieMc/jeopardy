@@ -52,7 +52,7 @@ function QuestionSection (props) {
                         <IndividualQuestion 
                         key = {question.category.id}
                         jQuestion = {question.question}
-                        jAnswer = {question.answer}
+                        jAnswer = {question.answer.toLowerCase()}
                         jCategory = {question.category.title}
                         jScore = {question.value}
                         inputDisable={trackDisable}
@@ -63,7 +63,7 @@ function QuestionSection (props) {
                             <CheckAnswer 
                             jQuestion = {question.question}
                             jScore={question.value}
-                            jAnswer = {question.answer}
+                            jAnswer = {question.answer.toLowerCase()}
                             handleSubmit = { usersAnswer }
                             trackScore = { trackUserScore }
                             key= {question.category.id}
