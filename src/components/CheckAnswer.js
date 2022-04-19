@@ -1,8 +1,8 @@
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import { useEffect } from 'react';
+
 
 
 
@@ -22,6 +22,7 @@ function CheckAnswer(props) {
 
     const handleInput = function (e) {
         setUserValue(e.target.value);
+        console.log(userValue);
     }
 
     const handleUserAnswer = function (e) {

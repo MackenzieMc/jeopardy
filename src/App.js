@@ -5,9 +5,9 @@ import axios from 'axios';
 //Import the useState and useEffect hook
 import { useState, useEffect } from 'react';
 
-//Import QuestionSection component
+//Import  Components
 import QuestionSection from './components/QuestionSection';
-
+import SoundPlayer from './components/SoundPlayer'
 import Footer from './components/Footer';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -25,8 +25,6 @@ function App() {
   const [questionArray, setQuestionArray] = useState([]);
   
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
-  const [soundPlayer, setSoundPlayer ] = useState(false)
 
   useEffect( () => {
     //Test out the API
@@ -51,8 +49,8 @@ function App() {
   return (
     <>
     <div className="App">
-      {/* <SoundPlayer /> */}
       <div class="wrapper">
+        <SoundPlayer />
         <h1>Jeopardy</h1>
         <QuestionSection theQuestion={questionArray} questionIndex={currentQuestionIndex} incrementIndex={incrementCounter} />
         <Footer />

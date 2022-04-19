@@ -41,6 +41,7 @@ body {
   width: 90%; 
   max-width: 1500px; 
   margin: 0 auto; 
+  position: relative;
 }
 
 .questionContainer {
@@ -82,6 +83,17 @@ body {
   align-items: flex-end;
 }
 
+/* Sound Player */
+.soundToggle {
+  background-color: transparent;
+  border: none; 
+  cursor: pointer; 
+  position: absolute;
+  top: 0;
+  right: 0; 
+  color: #fff; 
+  font-size: 1.5rem; 
+}
 
 
 /* Form styling */
