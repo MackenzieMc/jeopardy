@@ -14,7 +14,7 @@ function QuestionSection (props) {
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
-    const [userScore, setUserScore] = useState(100);
+    const [userScore, setUserScore] = useState(0);
 
     const [trackDisable, setDisable] = useState(false)
 

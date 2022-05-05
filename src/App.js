@@ -6,10 +6,12 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 //Import  Components
+import HomeScreen from './components/HomeScreen';
 import QuestionSection from './components/QuestionSection';
 import SoundPlayer from './components/SoundPlayer'
 import Footer from './components/Footer';
 
+// Import Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -26,6 +28,8 @@ function App() {
   
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
+  const [displayHome, setDisplayHome] = useState(true)
+
   useEffect( () => {
     //Test out the API
     axios({
@@ -40,6 +44,9 @@ function App() {
     })
   }, [])
 
+  const setDisplay = () => {
+    setDisplayHome(false)
+  }
 
   const incrementCounter = () => {
     setCurrentQuestionIndex(currentQuestionIndex + 1)
@@ -52,7 +59,15 @@ function App() {
       <div className="wrapper">
         <SoundPlayer />
         <h1>Jeopardy</h1>
-        <QuestionSection theQuestion={questionArray} questionIndex={currentQuestionIndex} incrementIndex={incrementCounter}/>
+        
+        { displayHome ?
+          <HomeScreen display={setDisplay}/>
+          :
+          <div>
+            <QuestionSection theQuestion={questionArray} questionIndex={currentQuestionIndex} incrementIndex={incrementCounter}/>
+          </div>
+
+        }
         <Footer />
       </div>
     </div>
