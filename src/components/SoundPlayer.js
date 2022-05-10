@@ -23,7 +23,7 @@ function SoundPlayer() {
                     :
                     <React.Fragment>
                         <FontAwesomeIcon icon={faVolumeHigh} />
-                        <audio src={mp3_file} autoPlay></audio>
+                        <audio src={mp3_file} autoPlay loop></audio>
                     </React.Fragment>
                 }
             </button>

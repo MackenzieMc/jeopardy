@@ -1,7 +1,7 @@
 function IndividualQuestion(props) {
     
     return (  
-        props.inputDisable === false ?
+        props.jUserAnswer == '' ?
         <div className="questionCard">
             <div className="categoryText">
                 <h3>{props.jCategory}</h3>
@@ -13,8 +13,8 @@ function IndividualQuestion(props) {
                 <h3>{props.jScore}</h3>
             </div>
         </div>
-        : props.inputDisable === true && props.jUserAnswer == props.jAnswer ?
 
+        : props.jAnswer == props.jUserAnswer ?
         <div className="questionCard">
             <div className="categoryText">
                 <h3>{props.jCategory}</h3>
@@ -30,7 +30,7 @@ function IndividualQuestion(props) {
             </div>
         </div>
 
-        : props.inputDisable === true && props.jUserAnswer != props.jAnswer ?
+        :props.jUserAnswer !== props.jAnswer ?
         <div className="questionCard">
             <div className="categoryText">
                 <h3>{props.jCategory}</h3>
