@@ -11,16 +11,12 @@ import NextButton from './NextButton';
 function QuestionSection (props) {
 
     const [userInput, setUserInput] = useState('');
-
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
     const [userScore, setUserScore] = useState(0);
-
-    const [trackDisable, setDisable] = useState(false)
+    const [trackDisable, setTrackDisable] = useState(false);
 
     const usersAnswer = function (e, userAnswer) {
-        e.preventDefault();
-
+        e.preventDefault()
         setUserInput(userAnswer.toLowerCase())
     }
 
@@ -32,8 +28,8 @@ function QuestionSection (props) {
         setUserScore(userScore + usersResponse)
     }
 
-    const trackUserDisable = function(isDisabled) {
-        setDisable(isDisabled)
+    const trackUserDisable = (isDisabled) => {
+        setTrackDisable(isDisabled)
     }
 
     return(
@@ -50,7 +46,7 @@ function QuestionSection (props) {
                         <IndividualQuestion 
                         key = {question.category.id}
                         jQuestion = {question.question}
-                        jAnswer = {question.answer.toLowerCase()}
+                        jAnswer={question.answer.replace(/(<([^>]+)>)/gi, "").toLowerCase()}
                         jCategory = {question.category.title}
                         jScore = {question.value}
                         inputDisable={trackDisable}
@@ -60,7 +56,7 @@ function QuestionSection (props) {
                             <CheckAnswer 
                             jQuestion = {question.question}
                             jScore={question.value}
-                            jAnswer = {question.answer.toLowerCase()}
+                            jAnswer={question.answer.replace(/(<([^>]+)>)/gi, "").toLowerCase()}
                             handleSubmit = { usersAnswer }
                             trackScore = { trackUserScore }
                             trackDisable = { trackUserDisable }
@@ -68,7 +64,7 @@ function QuestionSection (props) {
                             />
                             <NextButton 
                             incrementIndex = { incrementCounter }
-                            key={currentQuestionIndex}
+                            handleSubmit={usersAnswer}
                             />
                         </div>
                         </React.Fragment>   

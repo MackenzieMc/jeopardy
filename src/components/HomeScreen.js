@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 function HomeScreen(props) {
-    const [displayI, setDisplayI] = useState(true)
+    const [display, setDisplay] = useState(true)
 
     const handleClick = () => {
         props.display(false)
